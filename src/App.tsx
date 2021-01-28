@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
+import { CgSearchLoading } from "react-icons/cg";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ const App = () => {
   const [openSideCart, setOpenSideCart] = React.useState<boolean>(false);
 
   React.useEffect(() => {
+    document.title = "React Shopping";
     event.getProducts();
   }, []);
 
@@ -34,7 +36,20 @@ const App = () => {
   return (
     <div className="App">
       {products.length === 0 ? (
-        <p>Loading</p>
+        <div
+          style={{
+            height: "100vh",
+            color: "#eee",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            textAlign: "center",
+          }}
+        >
+          <CgSearchLoading style={{ fontSize: 50, marginBottom: 10 }} />
+          <h1>Searching products, please wait...</h1>
+        </div>
       ) : (
         <>
           {openSideComponentCart}
