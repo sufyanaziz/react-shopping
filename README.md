@@ -2,7 +2,7 @@
 
 this is my first app react with typescript 😁
 
-Thumbsup if you like it 👍
+Thumbsup and give a star if you like it 👍⭐
 
 ## **Link** 🔗
 
